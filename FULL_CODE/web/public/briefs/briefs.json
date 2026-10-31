@@ -1,0 +1,718 @@
+{
+ "week": "2026-09-21",
+ "escalationRule": "Escalate to the owning function today when severity is high/critical (safety, allergen, hygiene, misconduct are always high by policy), or the issue hits 3+ stores in the region, or the detector raised an emerging flag. Everything else goes into the owner's weekly queue.",
+ "regions": [
+  {
+   "region": "Central",
+   "file": "central_2026-09-21.html",
+   "total": 124,
+   "issues": [
+    {
+     "issue": "IT18",
+     "name": "Allergen / ingredient labelling error",
+     "owner": "Merchandising",
+     "severity": "critical",
+     "count": 5,
+     "trend": "\u2191",
+     "previous": 4,
+     "stores": [
+      "Saffron Hyper MP Nagar (4)",
+      "Saffron Hyper Vijay Nagar (1)"
+     ],
+     "n_stores": 2,
+     "quotes": [
+      {
+       "id": "FB-O3S3T2HA",
+       "text": "saffron select multigrain cookies khaaen ke baad bete ko rashes ho gaye packet pe peanut declare hi nhi kiya"
+      },
+      {
+       "id": "FB-3TO6YXAJ",
+       "text": "My sonn broke out in rashes after Saffron Select Multigrain Cookies, the pack does not declare peanut at all. So frsutrating."
+      }
+     ],
+     "score": 36
+    },
+    {
+     "issue": "IT23",
+     "name": "Online order delivery delay / missed slot",
+     "owner": "Supply Chain",
+     "severity": "high",
+     "count": 11,
+     "trend": "\u2191",
+     "previous": 7,
+     "stores": [
+      "Saffron Hyper Vijay Nagar (4)",
+      "Saffron Express Bhawarkuan (2)",
+      "Saffron Market Shankar Nagar (2)"
+     ],
+     "n_stores": 6,
+     "quotes": [
+      {
+       "id": "FB-AHLDWX8S",
+       "text": "online orders delayed, 5 orders pending dispatch at closing time, need action by tmrw"
+      },
+      {
+       "id": "FB-U9CXTVOG",
+       "text": "\ud83d\udc4e\ud83d\ude12 Sunday order kiya, abhi tak deliver nahi hua, delivery wale ka call bhi nahi aaya. \ud83d\ude20"
+      }
+     ],
+     "score": 23
+    },
+    {
+     "issue": "IT28",
+     "name": "Refund / return not processed",
+     "owner": "Digital",
+     "severity": "medium",
+     "count": 12,
+     "trend": "\u2191",
+     "previous": 7,
+     "stores": [
+      "Saffron Hyper MP Nagar (4)",
+      "Saffron Hyper Vijay Nagar (3)",
+      "Saffron Market Arera Colony (2)"
+     ],
+     "n_stores": 5,
+     "quotes": [
+      {
+       "id": "FB-6GRQ75BP",
+       "text": "\ud83d\ude21\ud83e\udd2c Refund galat amount ka aaya Rs 600 kam..."
+      },
+      {
+       "id": "FB-8PTRCJ7L",
+       "text": "Closing: cust came for refund status pending 4 days noted"
+      }
+     ],
+     "score": 23
+    },
+    {
+     "issue": "IT21",
+     "name": "Private-label product quality",
+     "owner": "Merchandising",
+     "severity": "high",
+     "count": 6,
+     "trend": "\u2191",
+     "previous": 2,
+     "stores": [
+      "Saffron Hyper Vijay Nagar (3)",
+      "Saffron Hyper MP Nagar (2)",
+      "Saffron Market Arera Colony (1)"
+     ],
+     "n_stores": 3,
+     "quotes": [
+      {
+       "id": "FB-1ZGMDTWF",
+       "text": "\ud83d\ude1e pichle Saturday jo tomatoes liya uska aadha maal andar se sada hua tha. \ud83e\udd2c\ud83d\udc4e\ud83e\udd2c"
+      },
+      {
+       "id": "FB-1UKXT9CM",
+       "text": "cust returned saffron kitchen murukku, says quality bad, cust threatening to post online, pls act"
+      }
+     ],
+     "score": 18
+    },
+    {
+     "issue": "IT16",
+     "name": "Expired / near-expiry product on shelf",
+     "owner": "Store Ops",
+     "severity": "high",
+     "count": 4,
+     "trend": "\u2193",
+     "previous": 7,
+     "stores": [
+      "Saffron Hyper Vijay Nagar (2)",
+      "Saffron Express Napier Town (1)",
+      "Saffron Express Telibandha (1)"
+     ],
+     "n_stores": 3,
+     "quotes": [
+      {
+       "id": "FB-FZ5UJEUM",
+       "text": "shift a: cust ne kharab lassi bottles wapas kiya, batch display se hataya, escalated"
+      },
+      {
+       "id": "FB-565KVZZI",
+       "text": "night shift: fefo nt followed in snacks aisle, 3 pkts near expiry in front, escalated"
+      }
+     ],
+     "score": 16
+    }
+   ],
+   "flags": [
+    {
+     "store": "Saffron Hyper MP Nagar",
+     "issue": "IT18",
+     "name": "Allergen / ingredient labelling error",
+     "reports": 5,
+     "confidence": 0.463
+    }
+   ]
+  },
+  {
+   "region": "East",
+   "file": "east_2026-09-21.html",
+   "total": 96,
+   "issues": [
+    {
+     "issue": "IT08",
+     "name": "Physical safety hazard (wet floor, wiring, falling stock)",
+     "owner": "Store Ops",
+     "severity": "high",
+     "count": 5,
+     "trend": "\u2191",
+     "previous": 2,
+     "stores": [
+      "Saffron Market GS Road (2)",
+      "Saffron Market Kankarbagh (2)",
+      "Saffron Hyper Behala (1)"
+     ],
+     "n_stores": 3,
+     "quotes": [
+      {
+       "id": "FB-Q2NCZSFW",
+       "text": "entrance ke paas farsh geela aur chikna tha,  \ud83e\udd2c\ud83d\ude1e\ud83d\ude21"
+      },
+      {
+       "id": "FB-KN5RGIF1",
+       "text": "fyi glass jar broken in meat counter, area cordoned"
+      }
+     ],
+     "score": 20
+    },
+    {
+     "issue": "IT14",
+     "name": "Out of stock / empty shelves",
+     "owner": "Supply Chain",
+     "severity": "high",
+     "count": 8,
+     "trend": "\u2191",
+     "previous": 3,
+     "stores": [
+      "Saffron Market GS Road (3)",
+      "Saffron Market Kankarbagh (2)",
+      "Saffron Express Lalpur (1)"
+     ],
+     "n_stores": 5,
+     "quotes": [
+      {
+       "id": "FB-DCEHI83J",
+       "text": "DC short supply on salt, shelf empty, pls follow up"
+      },
+      {
+       "id": "FB-J0J4TTDD",
+       "text": "CLOSING: SAFFRON SELECT BASMATI RICE 5 KG NOTT RECD IN GRN, OOS"
+      }
+     ],
+     "score": 15
+    },
+    {
+     "issue": "IT01",
+     "name": "Long checkout queue / slow billing",
+     "owner": "Store Ops",
+     "severity": "high",
+     "count": 7,
+     "trend": "\u2192",
+     "previous": 6,
+     "stores": [
+      "Saffron Market Gariahat (4)",
+      "Saffron Express Boring Road (1)",
+      "Saffron Express Shibpur (1)"
+     ],
+     "n_stores": 4,
+     "quotes": [
+      {
+       "id": "FB-J3CKIALX",
+       "text": "Self-checkout was closed and d express counter was taking full troolleys, waited 43 min for 3 items."
+      },
+      {
+       "id": "FB-TMOM2P8M",
+       "text": "Billing pe 16 minute khada raha 9 mein se sirf 1 counter khule da \ud83d\udc4e Yeh Gariahat wale store ki baat hai."
+      }
+     ],
+     "score": 14
+    },
+    {
+     "issue": "IT23",
+     "name": "Online order delivery delay / missed slot",
+     "owner": "Supply Chain",
+     "severity": "medium",
+     "count": 9,
+     "trend": "\u2191",
+     "previous": 6,
+     "stores": [
+      "Saffron Hyper Behala (4)",
+      "Saffron Market GS Road (2)",
+      "Saffron Market Kankarbagh (2)"
+     ],
+     "n_stores": 4,
+     "quotes": [
+      {
+       "id": "FB-72LPXZPV",
+       "text": "Ordered for the 8-10 pm slot, delivery came d nexxt morning. \ud83d\ude22\ud83d\ude21"
+      },
+      {
+       "id": "FB-PZM6K3XL",
+       "text": "Express delivery promisedddd in 30 minutes, came after 5 hours."
+      }
+     ],
+     "score": 14
+    },
+    {
+     "issue": "IT25",
+     "name": "Damaged or leaking items on delivery",
+     "owner": "Supply Chain",
+     "severity": "high",
+     "count": 7,
+     "trend": "\u2191",
+     "previous": 3,
+     "stores": [
+      "Saffron Market Kankarbagh (3)",
+      "Saffron Market GS Road (2)",
+      "Saffron Express Shibpur (1)"
+     ],
+     "n_stores": 4,
+     "quotes": [
+      {
+       "id": "FB-G4OUE1DV",
+       "text": "5 eggs were broken in the tray delivered on Monday. \ud83e\udd2c\ud83d\ude24"
+      },
+      {
+       "id": "FB-7ASZWSOS",
+       "text": "Handover - glass jar of pivkle broken in online order, cust sent photo, pls follow up"
+      }
+     ],
+     "score": 12
+    }
+   ],
+   "flags": []
+  },
+  {
+   "region": "North",
+   "file": "north_2026-09-21.html",
+   "total": 164,
+   "issues": [
+    {
+     "issue": "IT16",
+     "name": "Expired / near-expiry product on shelf",
+     "owner": "Store Ops",
+     "severity": "critical",
+     "count": 12,
+     "trend": "\u2191",
+     "previous": 5,
+     "stores": [
+      "Saffron Hyper Rohini (5)",
+      "Saffron Hyper Gomti Nagar (2)",
+      "Saffron Hyper Sohna Road (2)"
+     ],
+     "n_stores": 6,
+     "quotes": [
+      {
+       "id": "FB-D2B94NJ2",
+       "text": "household aisle mein fefo follow nahin, 2 pkt near expiry aage rakhe"
+      },
+      {
+       "id": "FB-45SQBIGJ",
+       "text": "Closing: cust ne kharab ice cream wapas kiya, batch display se hataya, photo in group"
+      }
+     ],
+     "score": 56
+    },
+    {
+     "issue": "IT18",
+     "name": "Allergen / ingredient labelling error",
+     "owner": "Merchandising",
+     "severity": "critical",
+     "count": 5,
+     "trend": "\u2192",
+     "previous": 5,
+     "stores": [
+      "Saffron Hyper Gomti Nagar (2)",
+      "Saffron Hyper Rohini (2)",
+      "Saffron Market Malviya Nagar (1)"
+     ],
+     "n_stores": 3,
+     "quotes": [
+      {
+       "id": "FB-BMGLV7GN",
+       "text": "handover - oats pe label issue ki cust complaint - label only in a language we cannot read"
+      },
+      {
+       "id": "FB-AE24ZVCG",
+       "text": "Yeh likhna pad raha hai. Saffron Select Multigrain Cookies mein peanut hain par label pe kahin nai likha, mere bachche ko allergy hai. Ab kabhi nahi\u2026"
+      }
+     ],
+     "score": 36
+    },
+    {
+     "issue": "IT06",
+     "name": "Hygiene lapse (pests, dirty food areas, foul smell)",
+     "owner": "Store Ops",
+     "severity": "high",
+     "count": 8,
+     "trend": "\u2191",
+     "previous": 1,
+     "stores": [
+      "Saffron Express Mayur Vihar (3)",
+      "Saffron Hyper Rohini (2)",
+      "Saffron Hyper Sohna Road (1)"
+     ],
+     "n_stores": 5,
+     "quotes": [
+      {
+       "id": "FB-7IXVKDPC",
+       "text": "bakery trays saaf nahi, smell, HK supervisor ko bola"
+      },
+      {
+       "id": "FB-J3HYS08C",
+       "text": "Opening: subah se washroom mein paani nai, badbu, HK ko bataya"
+      }
+     ],
+     "score": 32
+    },
+    {
+     "issue": "IT27",
+     "name": "Payment failure / money debited but order failed",
+     "owner": "Digital",
+     "severity": "high",
+     "count": 10,
+     "trend": "\u2192",
+     "previous": 10,
+     "stores": [
+      "Saffron Hyper Gomti Nagar (2)",
+      "Saffron Express Vaishali Nagar (2)",
+      "Saffron Hyper Rohini (2)"
+     ],
+     "n_stores": 6,
+     "quotes": [
+      {
+       "id": "FB-M41HAROG",
+       "text": "Rs 1070 account se kat gaye par orderr fail ho gaya."
+      },
+      {
+       "id": "FB-9MKQCFKV",
+       "text": "Paise abhi tak wapas crecit nahin hue please check karo \ud83d\ude44"
+      }
+     ],
+     "score": 22
+    },
+    {
+     "issue": "IT23",
+     "name": "Online order delivery delay / missed slot",
+     "owner": "Supply Chain",
+     "severity": "medium",
+     "count": 13,
+     "trend": "\u2191",
+     "previous": 10,
+     "stores": [
+      "Saffron Hyper Rohini (6)",
+      "Saffron Market Rajpur Road (2)",
+      "Saffron Express Mayur Vihar (1)"
+     ],
+     "n_stores": 7,
+     "quotes": [
+      {
+       "id": "FB-BGKMC6OX",
+       "text": "Express delivery promised in 30 minutes, came after 4 hrs. Never coming back."
+      },
+      {
+       "id": "FB-RACO1SCI",
+       "text": "Sunday online order kiya ekdam bkeaar kuch bhi theek se nahi aaya Bas ek suggestion hai"
+      }
+     ],
+     "score": 20
+    }
+   ],
+   "flags": [
+    {
+     "store": "Saffron Express Mayur Vihar",
+     "issue": "IT06",
+     "name": "Hygiene lapse (pests, dirty food areas, foul smell)",
+     "reports": 3,
+     "confidence": 0.3
+    },
+    {
+     "store": "Saffron Hyper Rohini",
+     "issue": "IT16",
+     "name": "Expired / near-expiry product on shelf",
+     "reports": 6,
+     "confidence": 0.3
+    }
+   ]
+  },
+  {
+   "region": "South",
+   "file": "south_2026-09-21.html",
+   "total": 193,
+   "issues": [
+    {
+     "issue": "IT08",
+     "name": "Physical safety hazard (wet floor, wiring, falling stock)",
+     "owner": "Store Ops",
+     "severity": "high",
+     "count": 9,
+     "trend": "\u2191",
+     "previous": 3,
+     "stores": [
+      "Saffron Hyper Whitefield (3)",
+      "Saffron Hyper Anna Nagar (2)",
+      "Saffron Hyper Gandhipuram (2)"
+     ],
+     "n_stores": 5,
+     "quotes": [
+      {
+       "id": "FB-2RN9OHTE",
+       "text": "ctr 1 kitta loose wire, electrician ku call"
+      },
+      {
+       "id": "FB-3YDNJNY3",
+       "text": "water on floor near meat counter, mopped, sign kept"
+      }
+     ],
+     "score": 36
+    },
+    {
+     "issue": "IT23",
+     "name": "Online order delivery delay / missed slot",
+     "owner": "Supply Chain",
+     "severity": "medium",
+     "count": 18,
+     "trend": "\u2191",
+     "previous": 13,
+     "stores": [
+      "Saffron Hyper Kukatpally (5)",
+      "Saffron Hyper Gandhipuram (5)",
+      "Saffron Hyper Anna Nagar (3)"
+     ],
+     "n_stores": 8,
+     "quotes": [
+      {
+       "id": "FB-M64LJDV8",
+       "text": "Express delivery promised in 30 minutes, came after 2 hours."
+      },
+      {
+       "id": "FB-98OY5E2B",
+       "text": "ordered for d 8-01 pm slot delivery came the next morning \ud83e\udd2c\ud83d\ude21 \ud83d\ude21\ud83d\ude24"
+      }
+     ],
+     "score": 32
+    },
+    {
+     "issue": "IT15",
+     "name": "Poor quality fresh produce",
+     "owner": "Supply Chain",
+     "severity": "high",
+     "count": 15,
+     "trend": "\u2191",
+     "previous": 11,
+     "stores": [
+      "Saffron Hyper Kukatpally (4)",
+      "Saffron Hyper Gandhipuram (3)",
+      "Saffron Express Mylapore (3)"
+     ],
+     "n_stores": 7,
+     "quotes": [
+      {
+       "id": "FB-PG3GXASZ",
+       "text": "F&V wastage high, mangoes rotting, noted"
+      },
+      {
+       "id": "FB-YMC40M9T",
+       "text": "Handover - F&V wastage high, grapes rotting, fyi"
+      }
+     ],
+     "score": 31
+    },
+    {
+     "issue": "IT16",
+     "name": "Expired / near-expiry product on shelf",
+     "owner": "Store Ops",
+     "severity": "critical",
+     "count": 6,
+     "trend": "\u2193",
+     "previous": 12,
+     "stores": [
+      "Saffron Hyper Gandhipuram (2)",
+      "Saffron Hyper Whitefield (2)",
+      "Saffron Express Mylapore (1)"
+     ],
+     "n_stores": 4,
+     "quotes": [
+      {
+       "id": "FB-T1QR2G8O",
+       "text": "Shift B - near expiry biscuits ku markdown podala"
+      },
+      {
+       "id": "FB-25W3P2YE",
+       "text": "Opening: FEFFO nott followed in household aisle, 2 ptks near expiry in front"
+      }
+     ],
+     "score": 28
+    },
+    {
+     "issue": "IT18",
+     "name": "Allergen / ingredient labelling error",
+     "owner": "Merchandising",
+     "severity": "critical",
+     "count": 5,
+     "trend": "\u2191",
+     "previous": 2,
+     "stores": [
+      "Saffron Market KK Nagar (2)",
+      "Saffron Express Mylapore (1)",
+      "Saffron Market RS Puram (1)"
+     ],
+     "n_stores": 4,
+     "quotes": [
+      {
+       "id": "FB-2411VA60",
+       "text": "Night shift: Saffron Kitchen Khakhra - sesame irukku aana label la illa nu cust solraanga, category team ku sonnom"
+      },
+      {
+       "id": "FB-VJTQEATH",
+       "text": "Store: Velachery. Romba emaatram shampoo packet la nutrition table missing idhu eppadi allowed? Romba erichal ah irukku Romba mosam"
+      }
+     ],
+     "score": 28
+    }
+   ],
+   "flags": []
+  },
+  {
+   "region": "West",
+   "file": "west_2026-09-21.html",
+   "total": 214,
+   "issues": [
+    {
+     "issue": "IT16",
+     "name": "Expired / near-expiry product on shelf",
+     "owner": "Store Ops",
+     "severity": "critical",
+     "count": 8,
+     "trend": "\u2192",
+     "previous": 7,
+     "stores": [
+      "Saffron Express Baner (2)",
+      "Saffron Hyper Andheri West (2)",
+      "Saffron Hyper Satellite (2)"
+     ],
+     "n_stores": 4,
+     "quotes": [
+      {
+       "id": "FB-YYD72ELO",
+       "text": "shift b - audit madhe shelf var expired bscuits sapadla, kadhla"
+      },
+      {
+       "id": "FB-L8BBYXUM",
+       "text": "Shift A: cust ne kharab zalela shrikhand parat kela, batch display varun kadhla"
+      }
+     ],
+     "score": 36
+    },
+    {
+     "issue": "IT28",
+     "name": "Refund / return not processed",
+     "owner": "Digital",
+     "severity": "high",
+     "count": 17,
+     "trend": "\u2191",
+     "previous": 13,
+     "stores": [
+      "Saffron Hyper Andheri West (3)",
+      "Saffron Hyper Ghodbunder Road (3)",
+      "Saffron Hyper Kothrud (3)"
+     ],
+     "n_stores": 8,
+     "quotes": [
+      {
+       "id": "FB-S8HDI5X6",
+       "text": "Shift A: return processed in POS but refund not reflecting for cust"
+      },
+      {
+       "id": "FB-I9111YWS",
+       "text": "rs 1120 satthi ajun thambava lagtay, 11 divas zale. saffron kadun yapeksha changlya apeskha hotya."
+      }
+     ],
+     "score": 34
+    },
+    {
+     "issue": "IT23",
+     "name": "Online order delivery delay / missed slot",
+     "owner": "Supply Chain",
+     "severity": "medium",
+     "count": 18,
+     "trend": "\u2193",
+     "previous": 21,
+     "stores": [
+      "Saffron Hyper Kothrud (6)",
+      "Saffron Hyper Andheri West (4)",
+      "Saffron Market Powai (4)"
+     ],
+     "n_stores": 6,
+     "quotes": [
+      {
+       "id": "FB-APQT24HZ",
+       "text": "Ya aathhavdyat don vela delivery slot chukla koni ka"
+      },
+      {
+       "id": "FB-7S74FGA4",
+       "text": "Delivery was 5 hours late and da app kept showing 'out for dleivery'."
+      }
+     ],
+     "score": 29
+    },
+    {
+     "issue": "IT06",
+     "name": "Hygiene lapse (pests, dirty food areas, foul smell)",
+     "owner": "Store Ops",
+     "severity": "critical",
+     "count": 5,
+     "trend": "\u2191",
+     "previous": 1,
+     "stores": [
+      "Saffron Express Dadar (1)",
+      "Saffron Express Vashi (1)",
+      "Saffron Hyper Ghodbunder Road (1)"
+     ],
+     "n_stores": 5,
+     "quotes": [
+      {
+       "id": "FB-5UWNC0G1",
+       "text": "FYI sakalpasun washroom madhe paani nahi, vaas, HK la sangitla"
+      },
+      {
+       "id": "FB-5FY0POAT",
+       "text": "Shift A: washroom no water since mrng, smell, housekeeping informed"
+      }
+     ],
+     "score": 24
+    },
+    {
+     "issue": "IT14",
+     "name": "Out of stock / empty shelves",
+     "owner": "Supply Chain",
+     "severity": "medium",
+     "count": 18,
+     "trend": "\u2193",
+     "previous": 23,
+     "stores": [
+      "Saffron Hyper Kothrud (5)",
+      "Saffron Hyper Satellite (5)",
+      "Saffron Hyper Andheri West (4)"
+     ],
+     "n_stores": 7,
+     "quotes": [
+      {
+       "id": "FB-A25HUFD6",
+       "text": "AAJ PNH DIABETIC ATTA SHELF VAR NAHI \ud83d\ude24\ud83d\udc4e"
+      },
+      {
+       "id": "FB-UX4GP95J",
+       "text": "Closing: DC kadun atta supply kami, shelf rikama"
+      }
+     ],
+     "score": 23
+    }
+   ],
+   "flags": []
+  }
+ ]
+}

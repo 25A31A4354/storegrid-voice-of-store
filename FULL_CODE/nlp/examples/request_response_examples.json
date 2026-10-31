@@ -1,0 +1,175 @@
+{
+  "examples": [
+    {
+      "description": "Standard English Billing Delay Feedback",
+      "request": {
+        "feedbackId": "fb-ex-001",
+        "storeId": "STORE-HYD-01",
+        "text": "Very slow billing at counter 3, waited 20 minutes in line.",
+        "sourceType": "kiosk",
+        "language": "en",
+        "createdAt": "2026-10-16T10:15:00Z"
+      },
+      "response": {
+        "feedbackId": "fb-ex-001",
+        "storeId": "STORE-HYD-01",
+        "originalText": "Very slow billing at counter 3, waited 20 minutes in line.",
+        "cleanedText": "very slow billing at counter 3, waited 20 minutes in line.",
+        "category": "BILLING_DELAY",
+        "confidence": 0.95,
+        "needsReview": false,
+        "matchedTerms": [
+          "slow billing",
+          "billing slow",
+          "waiting in line",
+          "billing wait time"
+        ]
+      }
+    },
+    {
+      "description": "Telugu-English Code-Mixed Feedback (Billing Delay)",
+      "request": {
+        "feedbackId": "fb-ex-002",
+        "storeId": "STORE-VIZAG-02",
+        "text": "Billing chala slow ga undi counter daggara rush ekkuva.",
+        "sourceType": "mobile_app",
+        "language": "te-en",
+        "createdAt": "2026-10-16T10:30:00Z"
+      },
+      "response": {
+        "feedbackId": "fb-ex-002",
+        "storeId": "STORE-VIZAG-02",
+        "originalText": "Billing chala slow ga undi counter daggara rush ekkuva.",
+        "cleanedText": "billing chala slow ga undi counter daggara rush ekkuva.",
+        "category": "BILLING_DELAY",
+        "confidence": 0.95,
+        "needsReview": false,
+        "matchedTerms": [
+          "billing chala slow ga undi",
+          "billing slow ga undi"
+        ]
+      }
+    },
+    {
+      "description": "Telugu-English Code-Mixed Feedback (Stock Shortage)",
+      "request": {
+        "feedbackId": "fb-ex-003",
+        "storeId": "STORE-VIJ-03",
+        "text": "Milk packets stock ledu shelves khali ga unnai store lo.",
+        "sourceType": "qr_survey",
+        "language": "te-en",
+        "createdAt": "2026-10-16T11:00:00Z"
+      },
+      "response": {
+        "feedbackId": "fb-ex-003",
+        "storeId": "STORE-VIJ-03",
+        "originalText": "Milk packets stock ledu shelves khali ga unnai store lo.",
+        "cleanedText": "milk packets stock ledu shelves khali ga unnai store lo.",
+        "category": "STOCK_SHORTAGE",
+        "confidence": 0.95,
+        "needsReview": false,
+        "matchedTerms": [
+          "stock ledu",
+          "shelves khali"
+        ]
+      }
+    },
+    {
+      "description": "Store Equipment Failure Feedback",
+      "request": {
+        "feedbackId": "fb-ex-004",
+        "storeId": "STORE-TIR-01",
+        "text": "Barcode scanner is broken and pos machine is down at billing counter.",
+        "sourceType": "kiosk",
+        "language": "en",
+        "createdAt": "2026-10-16T11:30:00Z"
+      },
+      "response": {
+        "feedbackId": "fb-ex-004",
+        "storeId": "STORE-TIR-01",
+        "originalText": "Barcode scanner is broken and pos machine is down at billing counter.",
+        "cleanedText": "barcode scanner is broken and pos machine is down at billing counter.",
+        "category": "EQUIPMENT_FAILURE",
+        "confidence": 0.95,
+        "needsReview": false,
+        "matchedTerms": [
+          "pos not working",
+          "pos failure",
+          "scanner broken"
+        ]
+      }
+    },
+    {
+      "description": "Other Retail Feedback (Parking / Store Timings)",
+      "request": {
+        "feedbackId": "fb-ex-005",
+        "storeId": "STORE-HYD-02",
+        "text": "The parking space is way too small and car park was completely full.",
+        "sourceType": "google_review",
+        "language": "en",
+        "createdAt": "2026-10-16T12:00:00Z"
+      },
+      "response": {
+        "feedbackId": "fb-ex-005",
+        "storeId": "STORE-HYD-02",
+        "originalText": "The parking space is way too small and car park was completely full.",
+        "cleanedText": "the parking space is way too small and car park was completely full.",
+        "category": "OTHER",
+        "confidence": 0.90,
+        "needsReview": false,
+        "matchedTerms": [
+          "parking space",
+          "parking"
+        ]
+      }
+    },
+    {
+      "description": "Conflicting Multi-Category Feedback (Staff Behaviour + Product Quality)",
+      "request": {
+        "feedbackId": "fb-ex-006",
+        "storeId": "STORE-HYD-03",
+        "text": "The cashier was very rude and the milk I bought was expired.",
+        "sourceType": "google_review",
+        "language": "en",
+        "createdAt": "2026-10-16T12:30:00Z"
+      },
+      "response": {
+        "feedbackId": "fb-ex-006",
+        "storeId": "STORE-HYD-03",
+        "originalText": "The cashier was very rude and the milk I bought was expired.",
+        "cleanedText": "the cashier was very rude and the milk i bought was expired.",
+        "category": "NEEDS_REVIEW",
+        "confidence": 0.40,
+        "needsReview": true,
+        "matchedTerms": [
+          "rude staff",
+          "cashier was rude",
+          "rude",
+          "spoiled/expired item",
+          "expired"
+        ]
+      }
+    },
+    {
+      "description": "Ambiguous / Short Feedback Requiring Human Review",
+      "request": {
+        "feedbackId": "fb-ex-007",
+        "storeId": "STORE-VIZAG-01",
+        "text": "ok",
+        "sourceType": "kiosk",
+        "language": "en",
+        "createdAt": "2026-10-16T13:00:00Z"
+      },
+      "response": {
+        "feedbackId": "fb-ex-007",
+        "storeId": "STORE-VIZAG-01",
+        "originalText": "ok",
+        "cleanedText": "ok",
+        "category": "NEEDS_REVIEW",
+        "confidence": 0.0,
+        "needsReview": true,
+        "matchedTerms": []
+      }
+    }
+  ]
+}

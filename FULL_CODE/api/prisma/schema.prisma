@@ -1,0 +1,184 @@
+// StoreGrid Relational Database Schema
+// Optimized for PostgreSQL with strict referential integrity, indexes, and audit logging.
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Category {
+  STOCK_SHORTAGE
+  BILLING_DELAY
+  STAFF_BEHAVIOUR
+  PRODUCT_QUALITY
+  EQUIPMENT_FAILURE
+  OTHER
+  NEEDS_REVIEW
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum IssueStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  REOPENED
+}
+
+enum SourceType {
+  CUSTOMER_REVIEW
+  STAFF_NOTE
+  CALL_TRANSCRIPT
+  CUSTOMER_SURVEY
+  KIOSK_FEEDBACK
+  WHATSAPP_CHAT
+  OTHER
+}
+
+enum ProcessingStatus {
+  PENDING
+  PROCESSED
+  IGNORED
+  ERROR
+}
+
+enum Provenance {
+  SYNTHETIC_DEMO
+  OFFICIAL_DATASET
+  MANUAL_ENTRY
+  TEST
+}
+
+enum OwnerTeam {
+  STORE_OPS
+  INVENTORY
+  BILLING_TECH
+  FACILITIES_MAINTENANCE
+  HR_TRAINING
+  CUSTOMER_SERVICE
+  QUALITY_ASSURANCE
+  UNASSIGNED
+}
+
+enum AuditAction {
+  CREATED
+  STATUS_CHANGED
+  ASSIGNMENT_CHANGED
+  PRIORITY_CHANGED
+  FEEDBACK_LINKED
+  FEEDBACK_UNLINKED
+  NOTE_ADDED
+}
+
+model Store {
+  id        String     @id @default(uuid()) @db.Uuid
+  code      String     @unique @db.VarChar(50)
+  name      String     @db.VarChar(255)
+  region    String?    @db.VarChar(100)
+  city      String?    @db.VarChar(100)
+  address   String?    @db.Text
+  isActive  Boolean    @default(true) @map("is_active")
+  createdAt DateTime   @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt DateTime   @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  feedback  Feedback[]
+  issues    Issue[]
+
+  @@map("stores")
+}
+
+model Feedback {
+  id                 String           @id @default(uuid()) @db.Uuid
+  storeId            String           @map("store_id") @db.Uuid
+  text               String           @db.Text
+  sourceType         SourceType       @default(CUSTOMER_REVIEW) @map("source_type")
+  timestamp          DateTime         @db.Timestamptz
+  rating             Int?             @db.SmallInt
+  language           String           @default("en") @db.VarChar(20)
+  detectedCategory   Category         @default(NEEDS_REVIEW) @map("detected_category")
+  sentiment          String?          @db.VarChar(20)
+  processingStatus   ProcessingStatus @default(PENDING) @map("processing_status")
+  provenance         Provenance       @default(MANUAL_ENTRY)
+  customerIdentifier String?          @map("customer_identifier") @db.VarChar(100)
+  metadata           Json?            @db.JsonB
+  createdAt          DateTime         @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt          DateTime         @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  store              Store            @relation(fields: [storeId], references: [id], onDelete: Restrict)
+  issueLinks         IssueFeedback[]
+
+  @@index([storeId], name: "idx_feedback_store_id")
+  @@index([timestamp], name: "idx_feedback_timestamp")
+  @@index([detectedCategory], name: "idx_feedback_category")
+  @@index([processingStatus], name: "idx_feedback_status")
+  @@index([provenance], name: "idx_feedback_provenance")
+  @@map("feedback")
+}
+
+model Issue {
+  id              String          @id @default(uuid()) @db.Uuid
+  storeId         String          @map("store_id") @db.Uuid
+  title           String          @db.VarChar(255)
+  description     String?         @db.Text
+  category        Category        @map("category")
+  priority        Priority        @default(MEDIUM) @map("priority")
+  status          IssueStatus     @default(OPEN) @map("status")
+  ownerTeam       OwnerTeam       @default(UNASSIGNED) @map("owner_team")
+  assignedTo      String?         @map("assigned_to") @db.VarChar(100)
+  dueDate         DateTime?       @map("due_date") @db.Timestamptz
+  resolutionNotes String?         @map("resolution_notes") @db.Text
+  resolvedAt      DateTime?       @map("resolved_at") @db.Timestamptz
+  createdAt       DateTime        @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt       DateTime        @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  store           Store           @relation(fields: [storeId], references: [id], onDelete: Restrict)
+  feedbackLinks   IssueFeedback[]
+  history         IssueHistory[]
+
+  @@index([storeId], name: "idx_issues_store_id")
+  @@index([status], name: "idx_issues_status")
+  @@index([priority], name: "idx_issues_priority")
+  @@index([category], name: "idx_issues_category")
+  @@index([ownerTeam], name: "idx_issues_owner_team")
+  @@map("issues")
+}
+
+model IssueFeedback {
+  issueId        String    @map("issue_id") @db.Uuid
+  feedbackId     String    @map("feedback_id") @db.Uuid
+  relevanceScore Float     @default(1.0) @map("relevance_score")
+  notes          String?   @db.Text
+  linkedAt       DateTime  @default(now()) @map("linked_at") @db.Timestamptz
+
+  issue          Issue     @relation(fields: [issueId], references: [id], onDelete: Cascade)
+  feedback       Feedback  @relation(fields: [feedbackId], references: [id], onDelete: Cascade)
+
+  @@id([issueId, feedbackId])
+  @@map("issue_feedback")
+}
+
+model IssueHistory {
+  id            String      @id @default(uuid()) @db.Uuid
+  issueId       String      @map("issue_id") @db.Uuid
+  action        AuditAction @map("action")
+  changedBy     String      @default("SYSTEM") @map("changed_by") @db.VarChar(100)
+  fieldChanged  String?     @map("field_changed") @db.VarChar(50)
+  previousValue String?     @map("previous_value") @db.Text
+  newValue      String?     @map("new_value") @db.Text
+  notes         String?     @db.Text
+  createdAt     DateTime    @default(now()) @map("created_at") @db.Timestamptz
+
+  issue         Issue       @relation(fields: [issueId], references: [id], onDelete: Cascade)
+
+  @@index([issueId], name: "idx_issue_history_issue_id")
+  @@map("issue_history")
+}

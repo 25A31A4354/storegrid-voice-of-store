@@ -1,0 +1,198 @@
+{
+  "__comment": "SYNTHETIC FICTIONAL TEST DATA - StoreGrid Hackathon Priority & Trend Detection Module. NOT REAL DATA.",
+  "metadata": {
+    "datasetName": "StoreGrid Synthetic Retail Complaints",
+    "isFictional": true,
+    "description": "Fictional complaint records across 3 retail stores covering all 7 official categories, designed to test spike detection, recurring issue detection, and priority scoring.",
+    "simulatedReferenceTime": "2026-10-17T11:00:00.000Z"
+  },
+  "complaints": [
+    {
+      "id": "CMP-1001",
+      "storeId": "STORE-01",
+      "category": "EQUIPMENT_FAILURE",
+      "status": "RESOLVED",
+      "createdAt": "2026-10-10T09:15:00.000Z",
+      "resolvedAt": "2026-10-11T14:30:00.000Z",
+      "subject": "POS Terminal 2 touchscreen freeze",
+      "details": "Terminal frozen during checkout peak hours. Rebooted and replaced power cable.",
+      "itemOrAssetId": "POS-TERM-02"
+    },
+    {
+      "id": "CMP-1002",
+      "storeId": "STORE-01",
+      "category": "EQUIPMENT_FAILURE",
+      "status": "OPEN",
+      "createdAt": "2026-10-15T08:30:00.000Z",
+      "resolvedAt": null,
+      "subject": "POS Terminal 2 touchscreen freeze recurring",
+      "details": "POS Terminal 2 is freezing again after 4 days of resolution. Smoke smell reported from adapter.",
+      "itemOrAssetId": "POS-TERM-02"
+    },
+    {
+      "id": "CMP-1003",
+      "storeId": "STORE-01",
+      "category": "EQUIPMENT_FAILURE",
+      "status": "OPEN",
+      "createdAt": "2026-10-17T09:15:00.000Z",
+      "resolvedAt": null,
+      "subject": "Barcode scanner hardware failure",
+      "details": "Scanner on lane 4 completely unresponsive.",
+      "itemOrAssetId": "SCAN-LANE-04"
+    },
+    {
+      "id": "CMP-1004",
+      "storeId": "STORE-01",
+      "category": "BILLING_DELAY",
+      "status": "RESOLVED",
+      "createdAt": "2026-10-15T14:00:00.000Z",
+      "resolvedAt": "2026-10-15T15:30:00.000Z",
+      "subject": "Slow card processing",
+      "details": "Card gateway timeout caused queue.",
+      "itemOrAssetId": null
+    },
+    {
+      "id": "CMP-1005",
+      "storeId": "STORE-01",
+      "category": "BILLING_DELAY",
+      "status": "OPEN",
+      "createdAt": "2026-10-16T15:00:00.000Z",
+      "resolvedAt": null,
+      "subject": "Severe billing delay during evening rush",
+      "details": "Customers waiting over 20 minutes due to payment gateway delay.",
+      "itemOrAssetId": null
+    },
+    {
+      "id": "CMP-1006",
+      "storeId": "STORE-01",
+      "category": "BILLING_DELAY",
+      "status": "OPEN",
+      "createdAt": "2026-10-16T17:30:00.000Z",
+      "resolvedAt": null,
+      "subject": "Payment terminal timeouts",
+      "details": "Card swipe failing repeatedly on all registers.",
+      "itemOrAssetId": null
+    },
+    {
+      "id": "CMP-1007",
+      "storeId": "STORE-01",
+      "category": "BILLING_DELAY",
+      "status": "OPEN",
+      "createdAt": "2026-10-17T09:00:00.000Z",
+      "resolvedAt": null,
+      "subject": "Billing queue overflow",
+      "details": "Payment gateway down, cash only causing customer complaints.",
+      "itemOrAssetId": null
+    },
+    {
+      "id": "CMP-1008",
+      "storeId": "STORE-01",
+      "category": "BILLING_DELAY",
+      "status": "OPEN",
+      "createdAt": "2026-10-17T10:15:00.000Z",
+      "resolvedAt": null,
+      "subject": "Overcharge on scanned item",
+      "details": "Customer overcharge dispute at counter 1.",
+      "itemOrAssetId": null
+    },
+    {
+      "id": "CMP-1009",
+      "storeId": "STORE-02",
+      "category": "PRODUCT_QUALITY",
+      "status": "OPEN",
+      "createdAt": "2026-10-14T10:00:00.000Z",
+      "resolvedAt": null,
+      "subject": "Expired milk cartons on dairy aisle",
+      "details": "Batch EXP-2026-10 found on front shelf. Spoiled milk reported by customer.",
+      "itemOrAssetId": "SKU-MILK-102"
+    },
+    {
+      "id": "CMP-1010",
+      "storeId": "STORE-02",
+      "category": "PRODUCT_QUALITY",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-10-16T16:00:00.000Z",
+      "resolvedAt": null,
+      "subject": "Broken packaging on olive oil bottles",
+      "details": "Oil leak in aisle 3 creating slippery hazard.",
+      "itemOrAssetId": "SKU-OIL-55"
+    },
+    {
+      "id": "CMP-1011",
+      "storeId": "STORE-02",
+      "category": "STOCK_SHORTAGE",
+      "status": "OPEN",
+      "createdAt": "2026-10-16T12:00:00.000Z",
+      "resolvedAt": null,
+      "subject": "Out of stock: Premium basmati rice 5kg",
+      "details": "Customer requested 5 bags, shelf empty and backroom unstocked.",
+      "itemOrAssetId": "SKU-RICE-05"
+    },
+    {
+      "id": "CMP-1012",
+      "storeId": "STORE-02",
+      "category": "STOCK_SHORTAGE",
+      "status": "OPEN",
+      "createdAt": "2026-10-17T08:00:00.000Z",
+      "resolvedAt": null,
+      "subject": "Eggs tray out of stock",
+      "details": "Organic eggs stock depleted.",
+      "itemOrAssetId": "SKU-EGGS-30"
+    },
+    {
+      "id": "CMP-1013",
+      "storeId": "STORE-03",
+      "category": "STAFF_BEHAVIOUR",
+      "status": "CLOSED",
+      "createdAt": "2026-10-12T11:00:00.000Z",
+      "resolvedAt": "2026-10-13T10:00:00.000Z",
+      "subject": "Rude response at customer care desk",
+      "details": "Customer reported unhelpful attitude regarding return policy.",
+      "itemOrAssetId": null
+    },
+    {
+      "id": "CMP-1014",
+      "storeId": "STORE-03",
+      "category": "STAFF_BEHAVIOUR",
+      "status": "OPEN",
+      "createdAt": "2026-10-16T18:00:00.000Z",
+      "resolvedAt": null,
+      "subject": "Cashier on personal phone call",
+      "details": "Cashier delayed billing by answering personal phone.",
+      "itemOrAssetId": null
+    },
+    {
+      "id": "CMP-1015",
+      "storeId": "STORE-03",
+      "category": "OTHER",
+      "status": "RESOLVED",
+      "createdAt": "2026-10-15T09:00:00.000Z",
+      "resolvedAt": "2026-10-15T12:00:00.000Z",
+      "subject": "Parking lot ticket machine out of paper",
+      "details": "Paper roll refilled by maintenance.",
+      "itemOrAssetId": "PARK-TKT-01"
+    },
+    {
+      "id": "CMP-1016",
+      "storeId": "STORE-03",
+      "category": "NEEDS_REVIEW",
+      "status": "OPEN",
+      "createdAt": "2026-10-17T07:30:00.000Z",
+      "resolvedAt": null,
+      "subject": "Uncategorized customer feedback slip",
+      "details": "Customer wrote illegible note regarding store entrance lighting.",
+      "itemOrAssetId": null
+    },
+    {
+      "id": "CMP-1017",
+      "storeId": "STORE-03",
+      "category": "UNKNOWN_CUSTOM_CATEGORY",
+      "status": "OPEN",
+      "createdAt": "2026-10-17T09:45:00.000Z",
+      "resolvedAt": null,
+      "subject": "Complaint with invalid category to test sanitizer resilience",
+      "details": "This record has an unrecognized category that should automatically fall back to NEEDS_REVIEW.",
+      "itemOrAssetId": null
+    }
+  ]
+}

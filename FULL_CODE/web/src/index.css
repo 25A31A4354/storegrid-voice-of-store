@@ -1,0 +1,308 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-page: #f5f5f7;
+  --color-ink: #1d1d1f;
+  --color-muted: #6e6e73; /* 5.07:1 on white, 4.66:1 on page */
+  --color-line: #e5e5ea;
+  --color-accent: #0066cc; /* 5.57:1 on white */
+  --color-accent-hover: #0058b0;
+  --color-urgent: #c4001a;
+  --color-urgent-tint: #fdecee;
+  --color-amber: #8f4a00;
+  --color-amber-tint: #fff4e5;
+  --color-ok: #1e7b34;
+  /* Product theme tokens (shell and Overview), light values */
+  --color-night: #f5f5f7; /* page background */
+  --color-panel: #ffffff;
+  --color-edge: rgba(0, 0, 0, 0.1);
+  --color-fg: #1d1d1f;
+  --color-dim: #5f6672; /* 5.5:1 on the page background */
+  --color-cyan: #0e7490; /* 5.4:1 on white */
+  --color-teal: #0d9488;
+  --color-danger: #c4001a;
+  --color-warn: #8f4a00;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-page);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Motion: entrance, growth, drifting background. All are switched off by the reduced-motion rule above. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes grow-y {
+  from {
+    transform: scaleY(0);
+  }
+}
+@keyframes drift {
+  50% {
+    transform: translate3d(4%, 6%, 0) scale(1.08);
+  }
+}
+@keyframes pulse-ring {
+  70%,
+  100% {
+    box-shadow: 0 0 0 10px rgba(196, 0, 26, 0);
+  }
+}
+.rise {
+  animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+.grow-x {
+  transform-origin: left;
+  animation: grow-x 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 60ms + 250ms);
+}
+.grow-y {
+  transform-origin: bottom;
+  animation: grow-y 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 25ms + 300ms);
+}
+.glass {
+  background: #ffffff;
+  border: 1px solid var(--color-edge);
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.04),
+    0 12px 32px -18px rgba(16, 24, 40, 0.18);
+}
+.glow-cyan {
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.04),
+    0 24px 60px -28px rgba(14, 116, 144, 0.4);
+}
+.alert-dot {
+  animation: pulse-ring 1.8s ease-out infinite;
+  box-shadow: 0 0 0 0 rgba(196, 0, 26, 0.45);
+}
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.aurora::before,
+.aurora::after {
+  content: '';
+  position: absolute;
+  width: 55vw;
+  height: 55vw;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.14;
+  animation: drift 22s ease-in-out infinite;
+}
+.aurora::before {
+  top: -20vw;
+  right: -10vw;
+  background: radial-gradient(circle, #67e8f9, transparent 65%);
+}
+.aurora::after {
+  bottom: -25vw;
+  left: 5vw;
+  background: radial-gradient(circle, #99f6e4, transparent 65%);
+  animation-delay: -9s;
+}
+
+/* Custom modern light scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Light theme subtle glow effects */
+.glow-accent-subtle {
+  box-shadow: 0 10px 30px -10px rgba(52, 120, 246, 0.08);
+}
+
+.glow-accent-border {
+  border-color: rgba(52, 120, 246, 0.3);
+  box-shadow: 0 0 15px -3px rgba(52, 120, 246, 0.1);
+}
+
+/* Page-wide motion: every screen's blocks, table rows and list items rise in one after another. */
+.live > div > :not(.rise) {
+  animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: 560ms;
+}
+.live > div > :nth-child(1):not(.rise) {
+  animation-delay: 0ms;
+}
+.live > div > :nth-child(2):not(.rise) {
+  animation-delay: 70ms;
+}
+.live > div > :nth-child(3):not(.rise) {
+  animation-delay: 140ms;
+}
+.live > div > :nth-child(4):not(.rise) {
+  animation-delay: 210ms;
+}
+.live > div > :nth-child(5):not(.rise) {
+  animation-delay: 280ms;
+}
+.live > div > :nth-child(6):not(.rise) {
+  animation-delay: 350ms;
+}
+.live > div > :nth-child(7):not(.rise) {
+  animation-delay: 420ms;
+}
+.live > div > :nth-child(8):not(.rise) {
+  animation-delay: 490ms;
+}
+.live > div > :nth-child(9):not(.rise) {
+  animation-delay: 560ms;
+}
+.live > div > :nth-child(10):not(.rise) {
+  animation-delay: 630ms;
+}
+.live tbody > tr:nth-child(-n + 14) {
+  animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.live tbody > tr:nth-child(1) {
+  animation-delay: 80ms;
+}
+.live tbody > tr:nth-child(2) {
+  animation-delay: 115ms;
+}
+.live tbody > tr:nth-child(3) {
+  animation-delay: 150ms;
+}
+.live tbody > tr:nth-child(4) {
+  animation-delay: 185ms;
+}
+.live tbody > tr:nth-child(5) {
+  animation-delay: 220ms;
+}
+.live tbody > tr:nth-child(6) {
+  animation-delay: 255ms;
+}
+.live tbody > tr:nth-child(7) {
+  animation-delay: 290ms;
+}
+.live tbody > tr:nth-child(8) {
+  animation-delay: 325ms;
+}
+.live tbody > tr:nth-child(9) {
+  animation-delay: 360ms;
+}
+.live tbody > tr:nth-child(10) {
+  animation-delay: 395ms;
+}
+.live tbody > tr:nth-child(11) {
+  animation-delay: 430ms;
+}
+.live tbody > tr:nth-child(12) {
+  animation-delay: 465ms;
+}
+.live tbody > tr:nth-child(13) {
+  animation-delay: 500ms;
+}
+.live tbody > tr:nth-child(14) {
+  animation-delay: 535ms;
+}
+.live ul > li:nth-child(-n + 10):not(.rise) {
+  animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.live ul > li:nth-child(1):not(.rise) {
+  animation-delay: 100ms;
+}
+.live ul > li:nth-child(2):not(.rise) {
+  animation-delay: 145ms;
+}
+.live ul > li:nth-child(3):not(.rise) {
+  animation-delay: 190ms;
+}
+.live ul > li:nth-child(4):not(.rise) {
+  animation-delay: 235ms;
+}
+.live ul > li:nth-child(5):not(.rise) {
+  animation-delay: 280ms;
+}
+.live ul > li:nth-child(6):not(.rise) {
+  animation-delay: 325ms;
+}
+.live ul > li:nth-child(7):not(.rise) {
+  animation-delay: 370ms;
+}
+.live ul > li:nth-child(8):not(.rise) {
+  animation-delay: 415ms;
+}
+.live ul > li:nth-child(9):not(.rise) {
+  animation-delay: 460ms;
+}
+.live ul > li:nth-child(10):not(.rise) {
+  animation-delay: 505ms;
+}
+.live :is(.rounded-xl, .rounded-2xl).bg-white.border:not(:has(table)) {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.live :is(.rounded-xl, .rounded-2xl).bg-white.border:not(:has(table)):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -18px rgba(16, 24, 40, 0.35);
+}
+@keyframes status-ring {
+  70%,
+  100% {
+    box-shadow: 0 0 0 6px rgba(5, 150, 105, 0);
+  }
+}
+.status-pulse {
+  animation: status-ring 2s ease-out infinite;
+  box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.5);
+}

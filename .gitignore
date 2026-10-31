@@ -1,0 +1,21 @@
+# Secrets and environment
+.env
+.venv/
+venv/
+
+models/
+
+# Build output and dependencies
+node_modules/
+dist/
+__pycache__/
+.pytest_cache/
+
+# Local databases and generated demo files
+*.sqlite
+*.sqlite3
+/briefs/
+demo_slice.csv
+
+# OS junk
+.DS_Store
